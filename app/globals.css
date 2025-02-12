@@ -2,20 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset link styles */
+a {
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Ensure Lisu Bosa Applies */
+.font-lisu {
+  font-family: var(--font-lisu-bosa) !important;
 }
 
+/* Fix Text Spacing and Alignment */
+.leading-none {
+  line-height: 1;
+}
+
+.text-50px {
+  font-size: 50px;
+}
+
+.text-20px {
+  font-size: 20px;
+}
+
+/* Adjust positioning for "family dental" */
+.mt-minus-5 {
+  margin-top: -5px;
+}
+
+@font-face {
+  font-family: "Lisua Bosa";
+  src: url('/fonts/LisuaBosa.ttf') format('truetype'); /* Ensure correct path */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Ensure background covers only Navbar + Hero section */
+.navbar-hero-bg {
+  background-image: url('/background.jpg'); /* Ensure this path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Ensures it covers only the Hero and Navbar */
+  width: 100vw;
+  height: 100vh;
+  position: relative; /* Prevents absolute overlapping */
+  z-index: -1; /* Pushes background behind all elements */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Keeps content structured */
+}
+
+/* Ensure other sections are not affected */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: none; /* Remove global background if it's affecting other sections */
 }
