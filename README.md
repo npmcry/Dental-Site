@@ -1,3 +1,5 @@
+No copyright intended, used for practing web dev
+Not for Use yet, all credits to all inspo
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
