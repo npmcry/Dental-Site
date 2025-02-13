@@ -1,18 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // For static site generation
+  output: 'export',
   images: {
-    unoptimized: true, // Required for static export
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    unoptimized: true,
   },
-  // Handle trailing slashes consistently
   trailingSlash: true,
 }
 
