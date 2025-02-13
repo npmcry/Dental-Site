@@ -41,7 +41,7 @@ const CosmeticDentistry = () => {
           <div className="absolute -inset-2 bg-gradient-to-r from-pink-100 via-blue-100 to-purple-100 rounded-[30px] blur opacity-40 group-hover:opacity-75 transition duration-300"></div>
           <div className="relative h-[400px] w-full">
             <Image
-              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99"
+              src="/services-images/cosmetic.png"
               alt="Beautiful smile after cosmetic dentistry"
               fill
               className="object-cover rounded-[20px]"
