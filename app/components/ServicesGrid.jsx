@@ -5,7 +5,6 @@ export default function ServicesGrid() {
   return (
     <>
       <section id="services" className="w-full max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 ">
-
         <h2 className="text-center text-3xl md:text-4xl lg:text-5xl font-bold text-[#5E4432] mb-12">
           Dental Services at Paradise Dental
         </h2>
@@ -17,36 +16,42 @@ export default function ServicesGrid() {
               description:
                 "Flawless smiles start here! From whitening to veneers, we perfect your smile with expert cosmetic dentistry.",
               image: "cosmetic.png",
+              link: "/public/service-details/cosmetic"
             },
             {
               title: "Laser Dentistry",
               description:
                 "Precise, Painless, and Powerful! Experience advanced laser dentistry for a brighter, healthier smile with minimal discomfort.",
               image: "laser.png",
+              link: "/public/service-details/laser"
             },
             {
               title: "Restorative Dentistry",
               description:
                 "Restore, Renew, Smile! Expert restorative dentistry to bring back your smile's strength, function, and beauty.",
               image: "restorative.png",
+              link: "/public/service-details/restorative"
             },
             {
               title: "Preventive Dentistry",
               description:
                 "Protect Your Smile for Life! Preventive dentistry keeps your teeth healthy with expert care.",
               image: "preventive.png",
+              link: "/public/service-details/preventive"
             },
             {
               title: "First Visit at Paradise Dental",
               description:
                 "Easy, Comfortable, Stress-Free! Your next visit at Paradise Dental is all about your comfort and care.",
               image: "firstvisit.png",
+              link: "/public/service-details/first-visit"
             },
             {
               title: "Teeth Whitening",
               description:
                 "Brighten Your Smile Instantly! Professional teeth whitening for a radiant, confident look.",
               image: "whitening.png",
+              link: "/public/service-details/whitening"
             },
           ].map((service, index) => (
             <div
@@ -68,12 +73,12 @@ export default function ServicesGrid() {
                 </h3>
                 <p className="text-[#5E4432] mb-4">{service.description}</p>
                 <div className="flex items-center">
-                  <a
-                    href="#"
+                  <Link
+                    href={service.link}
                     className="text-sm font-semibold text-[#5E4432] hover:underline"
                   >
                     LEARN MORE &rarr;
-                  </a>
+                  </Link>
                   <Link
                     href="/appointment"
                     className="ml-auto px-5 py-2 border-2 border-[#5E4432] text-[#5E4432] rounded-full font-semibold text-sm hover:bg-[#5E4432] hover:text-white transition"
@@ -87,9 +92,7 @@ export default function ServicesGrid() {
         </div>
       </section>
 
-      {/* ————————————————
-          2) FIRST VISIT SECTION (full-width SVG)
-          ———————————————— */}
+      {/* First Visit Section (full-width SVG) */}
       <section className="w-full bg-white py-16 pb-0">
         <div className="relative w-full">
           <Image
@@ -101,21 +104,20 @@ export default function ServicesGrid() {
             priority
           />
 
-          {/* White Button Overlaid (moved slightly to the right) */}
+          {/* White Button Overlaid */}
           <Link
             href="/appointment"
             className="
-    absolute top-[80%] left-1/2 
-    transform -translate-x-1/2
-    bg-transparent text-white
-    border-2 border-white
-    rounded-[40px] py-3 px-6 md:py-4 md:px-8 text-lg md:text-2xl font-semibold  
-    hover:bg-white hover:text-[#2469FD]
-    transition-all duration-300 ease-in-out"
+              absolute top-[80%] left-1/2 
+              transform -translate-x-1/2
+              bg-transparent text-white
+              border-2 border-white
+              rounded-[40px] py-3 px-6 md:py-4 md:px-8 text-lg md:text-2xl font-semibold  
+              hover:bg-white hover:text-[#2469FD]
+              transition-all duration-300 ease-in-out"
           >
             Learn More
           </Link>
-
         </div>
       </section>
     </>

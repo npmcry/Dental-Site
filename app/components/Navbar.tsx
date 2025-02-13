@@ -3,16 +3,31 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link"; // ✅ Ensure Link is imported
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+    const pathname = usePathname();
+    const isHome = pathname === '/';
     const [menuOpen, setMenuOpen] = useState(false);
 
     const scrollToSection = (sectionId: string) => {
+        if (!isHome) {
+            // If not on home page, navigate to home first
+            window.location.href = `/#${sectionId}`;
+            return;
+        }
         const element = document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
         setMenuOpen(false);
+    };
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, sectionId: string) => {
+        if (isHome) {
+            e.preventDefault();
+            scrollToSection(sectionId);
+        }
     };
 
     // Auto-close menu when resizing back to large screens
@@ -55,20 +70,27 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <ul className="hidden md:flex space-x-4 lg:space-x-12 text-[20px] text-[#2469FD] font-inter">
                 <li>
-                    <button 
-                        onClick={() => scrollToSection('insurance')} 
+                    <Link 
+                        href="/#insurance" 
                         className="hover:text-black transition"
+                        onClick={(e) => {
+                            if (isHome) {
+                                e.preventDefault();
+                                scrollToSection('insurance');
+                            }
+                        }}
                     >
                         Insurance
-                    </button>
+                    </Link>
                 </li>
                 <li>
-                    <button 
-                        onClick={() => scrollToSection('services')} 
-                        className="hover:text-black transition"
+                    <Link 
+                        href="/#services" 
+                        className="hover:text-black transition-all duration-300"
+                        onClick={(e) => handleNavClick(e, 'services')}
                     >
                         Services
-                    </button>
+                    </Link>
                 </li>
                 <li><Link href="/patients" className="hover:text-black transition">Patients</Link></li>
                 <li><Link href="/gallery" className="hover:text-black transition">Smile Gallery</Link></li>
@@ -81,25 +103,29 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="absolute top-[70px] left-0 w-full bg-white md:hidden flex flex-col items-center space-y-4 py-4 transition-all duration-300">
-                    <button 
-                        onClick={() => scrollToSection('insurance')} 
+                <div className="absolute top-[70px] left-0 w-full backdrop-blur-lg bg-white/80 md:hidden flex flex-col items-center space-y-4 py-4">
+                    <Link 
+                        href="/#insurance" 
                         className="text-[#2469FD] text-[20px] font-inter hover:text-black"
+                        onClick={(e) => {
+                            handleNavClick(e, 'insurance');
+                            setMenuOpen(false);
+                        }}
                     >
                         Insurance
-                    </button>
-                    <button 
-                        onClick={() => scrollToSection('services')} 
-                        className="text-[#2469FD] text-[20px] font-inter hover:text-black"
+                    </Link>
+                    <Link 
+                        href="/#services" 
+                        className="text-[#2469FD] text-[20px] font-inter hover:text-black transition-all duration-300"
+                        onClick={(e) => {
+                            handleNavClick(e, 'services');
+                            setMenuOpen(false);
+                        }}
                     >
                         Services
-                    </button>
-                    <Link href="/patients" className="text-[#2469FD] text-[20px] font-inter hover:text-black" onClick={() => setMenuOpen(false)}>
-                        Patients
                     </Link>
-                    <Link href="/gallery" className="text-[#2469FD] text-[20px] font-inter hover:text-black" onClick={() => setMenuOpen(false)}>
-                        Smile Gallery
-                    </Link>
+                    <Link href="/patients" className="text-[#2469FD] text-[20px] font-inter hover:text-black">Patients</Link>
+                    <Link href="/gallery" className="text-[#2469FD] text-[20px] font-inter hover:text-black">Smile Gallery</Link>
                 </div>
             )}
 
