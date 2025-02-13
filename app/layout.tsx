@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Lisu_Bosa } from "next/font/google";
 import Navbar from "./components/Navbar";
+import ChatbotButton from "./components/ChatbotButton";
 // TODO: Enable when setting up authentication
 // import { SessionProvider } from "next-auth/react";
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         {/* TODO: Enable SessionProvider when setting up authentication */}
         {children}
+        <ChatbotButton />
       </body>
     </html>
   );
