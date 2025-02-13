@@ -16,42 +16,42 @@ export default function ServicesGrid() {
               description:
                 "Flawless smiles start here! From whitening to veneers, we perfect your smile with expert cosmetic dentistry.",
               image: "cosmetic.png",
-              link: "/public/service-details/cosmetic"
+              link: "/service-details/cosmetic"  // Updated link path
             },
             {
               title: "Laser Dentistry",
               description:
                 "Precise, Painless, and Powerful! Experience advanced laser dentistry for a brighter, healthier smile with minimal discomfort.",
               image: "laser.png",
-              link: "/public/service-details/laser"
+              link: "/service-details/laser"  // Updated link path
             },
             {
               title: "Restorative Dentistry",
               description:
                 "Restore, Renew, Smile! Expert restorative dentistry to bring back your smile's strength, function, and beauty.",
               image: "restorative.png",
-              link: "/public/service-details/restorative"
+              link: "/service-details/restorative"  // Updated link path
             },
             {
               title: "Preventive Dentistry",
               description:
                 "Protect Your Smile for Life! Preventive dentistry keeps your teeth healthy with expert care.",
               image: "preventive.png",
-              link: "/public/service-details/preventive"
+              link: "/service-details/preventive"  // Updated link path
             },
             {
               title: "First Visit at Paradise Dental",
               description:
                 "Easy, Comfortable, Stress-Free! Your next visit at Paradise Dental is all about your comfort and care.",
               image: "firstvisit.png",
-              link: "/public/service-details/first-visit"
+              link: "/service-details/first-visit"  // Updated link path
             },
             {
               title: "Teeth Whitening",
               description:
                 "Brighten Your Smile Instantly! Professional teeth whitening for a radiant, confident look.",
               image: "whitening.png",
-              link: "/public/service-details/whitening"
+              link: "/service-details/whitening"  // Updated link path
             },
           ].map((service, index) => (
             <div
