@@ -222,3 +222,26 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   font-weight: bold !important;
   color: #2469FD !important;
 }
+
+.blue-gradient {
+  background: linear-gradient(135deg, #2469FD 0%, #6092FF 100%);
+}
+
+.white-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #EBF2FF 100%);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+}

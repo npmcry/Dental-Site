@@ -108,11 +108,18 @@ export default function ServicesGrid() {
           <Link
             href="/appointment"
             className="
-              absolute top-[80%] left-1/2 
+              absolute top-[75%] sm:top-[80%] left-1/2 
               transform -translate-x-1/2
               bg-transparent text-white
-              border-2 border-white
-              rounded-[40px] py-3 px-6 md:py-4 md:px-8 text-lg md:text-2xl font-semibold  
+              border border-white
+              rounded-[30px] sm:rounded-[40px] 
+              py-2 sm:py-3 md:py-4 
+              px-4 sm:px-6 md:px-8
+              text-base sm:text-lg md:text-2xl 
+              font-semibold
+              whitespace-nowrap
+              w-auto max-w-[90%] sm:max-w-none
+              text-center
               hover:bg-white hover:text-[#2469FD]
               transition-all duration-300 ease-in-out"
           >

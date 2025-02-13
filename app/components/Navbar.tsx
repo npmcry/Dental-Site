@@ -107,29 +107,73 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="absolute top-[70px] left-0 w-full backdrop-blur-lg bg-white/80 md:hidden flex flex-col items-center space-y-4 py-4">
-                    <Link 
-                        href="/#insurance" 
-                        className="text-[#2469FD] text-[20px] font-inter hover:text-white"
-                        onClick={(e) => {
-                            handleNavClick(e, 'insurance');
-                            setMenuOpen(false);
-                        }}
-                    >
-                        Insurance
-                    </Link>
-                    <Link 
-                        href="/#services" 
-                        className="text-[#2469FD] text-[20px] font-inter hover:text-white transition-all duration-300"
-                        onClick={(e) => {
-                            handleNavClick(e, 'services');
-                            setMenuOpen(false);
-                        }}
-                    >
-                        Services
-                    </Link>
-                    <Link href="/patients" className="text-[#2469FD] text-[20px] font-inter hover:text-white">Patients</Link>
-                    <Link href="/gallery" className="text-[#2469FD] text-[20px] font-inter hover:text-white">Smile Gallery</Link>
+                <div className="fixed top-[70px] left-0 w-full h-[calc(100vh-70px)] animate-slideIn 
+                    backdrop-blur-xl bg-white/95 md:hidden flex flex-col items-center pt-8 pb-12 px-6">
+                    {/* Navigation Links Container */}
+                    <div className="w-full max-w-md flex flex-col items-center space-y-5 mb-8">
+                        <Link 
+                            href="/#insurance" 
+                            className="w-full text-[#2469FD] text-xl font-inter font-medium 
+                                rounded-[20px] py-3 px-6 hover:blue-gradient hover:text-white 
+                                transition-all duration-300 text-center"
+                            onClick={(e) => {
+                                handleNavClick(e, 'insurance');
+                                setMenuOpen(false);
+                            }}
+                        >
+                            Insurance
+                        </Link>
+                        <Link 
+                            href="/#services" 
+                            className="w-full text-[#2469FD] text-xl font-inter font-medium 
+                                rounded-[20px] py-3 px-6 hover:blue-gradient hover:text-white 
+                                transition-all duration-300 text-center"
+                            onClick={(e) => {
+                                handleNavClick(e, 'services');
+                                setMenuOpen(false);
+                            }}
+                        >
+                            Services
+                        </Link>
+                        <Link 
+                            href="/patients" 
+                            className="w-full text-[#2469FD] text-xl font-inter font-medium 
+                                rounded-[20px] py-3 px-6 hover:blue-gradient hover:text-white 
+                                transition-all duration-300 text-center"
+                        >
+                            Patients
+                        </Link>
+                        <Link 
+                            href="/gallery" 
+                            className="w-full text-[#2469FD] text-xl font-inter font-medium 
+                                rounded-[20px] py-3 px-6 hover:blue-gradient hover:text-white 
+                                transition-all duration-300 text-center"
+                        >
+                            Smile Gallery
+                        </Link>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="w-full max-w-md space-y-4 mt-auto">
+                        <a
+                            href="tel:9162591701"
+                            className="w-full white-gradient text-[#2469FD] text-xl font-medium 
+                                rounded-[30px] py-4 px-6 flex items-center justify-center 
+                                transition-all duration-300 hover:opacity-90 active:scale-[0.98]"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Call To Book
+                        </a>
+                        <Link 
+                            href="/appointment"
+                            className="w-full blue-gradient text-white text-xl font-medium 
+                                rounded-[30px] py-4 px-6 flex items-center justify-center 
+                                transition-all duration-300 hover:opacity-90 active:scale-[0.98]"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Book Online
+                        </Link>
+                    </div>
                 </div>
             )}
 
