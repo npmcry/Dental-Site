@@ -72,7 +72,7 @@ const Navbar = () => {
                 <li>
                     <Link 
                         href="/#insurance" 
-                        className="hover:text-black transition"
+                        className="hover:text-white transition"
                         onClick={(e) => {
                             if (isHome) {
                                 e.preventDefault();
@@ -86,14 +86,18 @@ const Navbar = () => {
                 <li>
                     <Link 
                         href="/#services" 
-                        className="hover:text-black transition-all duration-300"
+                        className="hover:text-white transition-all duration-300"
                         onClick={(e) => handleNavClick(e, 'services')}
                     >
                         Services
                     </Link>
                 </li>
-                <li><Link href="/patients" className="hover:text-black transition">Patients</Link></li>
-                <li><Link href="/gallery" className="hover:text-black transition">Smile Gallery</Link></li>
+                <li>
+                    <Link href="/patients" className="hover:text-white transition">Patients</Link>
+                </li>
+                <li>
+                    <Link href="/gallery" className="hover:text-white transition">Smile Gallery</Link>
+                </li>
             </ul>
 
             {/* Mobile Menu Button */}
@@ -106,7 +110,7 @@ const Navbar = () => {
                 <div className="absolute top-[70px] left-0 w-full backdrop-blur-lg bg-white/80 md:hidden flex flex-col items-center space-y-4 py-4">
                     <Link 
                         href="/#insurance" 
-                        className="text-[#2469FD] text-[20px] font-inter hover:text-black"
+                        className="text-[#2469FD] text-[20px] font-inter hover:text-white"
                         onClick={(e) => {
                             handleNavClick(e, 'insurance');
                             setMenuOpen(false);
@@ -116,7 +120,7 @@ const Navbar = () => {
                     </Link>
                     <Link 
                         href="/#services" 
-                        className="text-[#2469FD] text-[20px] font-inter hover:text-black transition-all duration-300"
+                        className="text-[#2469FD] text-[20px] font-inter hover:text-white transition-all duration-300"
                         onClick={(e) => {
                             handleNavClick(e, 'services');
                             setMenuOpen(false);
@@ -124,8 +128,8 @@ const Navbar = () => {
                     >
                         Services
                     </Link>
-                    <Link href="/patients" className="text-[#2469FD] text-[20px] font-inter hover:text-black">Patients</Link>
-                    <Link href="/gallery" className="text-[#2469FD] text-[20px] font-inter hover:text-black">Smile Gallery</Link>
+                    <Link href="/patients" className="text-[#2469FD] text-[20px] font-inter hover:text-white">Patients</Link>
+                    <Link href="/gallery" className="text-[#2469FD] text-[20px] font-inter hover:text-white">Smile Gallery</Link>
                 </div>
             )}
 
