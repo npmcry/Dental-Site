@@ -3,7 +3,8 @@ import Image from "next/image";
 export default function ServicesGrid() {
   return (
     <>
-      <section className="w-full max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 ">
+      <section id="services" className="w-full max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 ">
+
         <h2 className="text-center text-3xl md:text-4xl lg:text-5xl font-bold text-[#5E4432] mb-12">
           Dental Services at Paradise Dental
         </h2>

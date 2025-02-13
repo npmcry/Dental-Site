@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 
@@ -6,7 +7,8 @@ const Hero = () => {
         <>
 
             {/* ✅ Background wrapper - does NOT mess up layout */}
-            <div className="navbar-hero-bg">
+            <div className="navbar-hero-bg" style={{ pointerEvents: "none" }}>
+
                 <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
 
                     {/* Left Blob */}
@@ -62,7 +64,7 @@ const Hero = () => {
                         <a
                             href="/book-online"
                             className="px-4 lg:px-5 py-2 bg-[#2469FD] text-white rounded-[30px] text-[20px] 
-               hover:bg-[#3A5899] transition duration-300 flex items-center justify-center"
+               hover:bg-[#feffff] transition duration-300 flex items-center justify-center hover:text-[#2469FD]"
                             style={{ minWidth: "160px", height: "60px" }}
                         >
                             Book Online

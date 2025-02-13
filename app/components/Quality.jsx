@@ -84,7 +84,7 @@ const QualityCare = () => {
                 <div className="mt-16">
 
                     {/* Fixed Full-Width Insurance SVG */}
-                    <div className="relative w-screen left-1/2 transform -translate-x-1/2">
+                    <div id="insurance" className="relative w-screen left-1/2 transform -translate-x-1/2">
                         <Image
                             src="/assets/service-icons/images/insurance.svg"
                             alt="Insurance Providers"

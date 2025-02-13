@@ -51,7 +51,7 @@ a {
   width: 100vw;
   height: 100vh;
   position: relative; /* Prevents absolute overlapping */
-  z-index: -1; /* Pushes background behind all elements */
+  z-index: 0; /* Pushes background behind all elements */
   
   display: flex;
   flex-direction: column;
@@ -79,5 +79,13 @@ body {
 }
 
 .navbar-hero-bg {
-  pointer-events: none; /* Ensures it doesn't block buttons */
+  pointer-events: none;
+}
+
+.hover\:bg-white:hover {
+  background-color: white !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import Link from "next/link"; // ✅ Ensure Link is imported
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -32,15 +33,21 @@ const Navbar = () => {
                     className="w-[50px] h-[50px] object-contain"
                 />
                 <div className="flex flex-col justify-center">
-                    <span className="text-[#2469FD] text-[30px] md:text-[40px] lg:text-[50px] font-lisu font-bold leading-none">Paradise</span>
-                    <span className="text-[#2469FD] text-[14px] md:text-[16px] lg:text-[20px] font-inter leading-none self-center">family dental</span>
+                    <Link href="/" className="flex flex-col items-center">
+                        <span className="text-[#2469FD] text-[30px] md:text-[40px] lg:text-[50px] font-lisu font-bold leading-none">
+                            Paradise
+                        </span>
+                        <span className="text-[#2469FD] text-[14px] md:text-[16px] lg:text-[20px] font-inter leading-none self-center">
+                            family dental
+                        </span>
+                    </Link>
                 </div>
             </a>
 
             {/* Desktop Navigation */}
             <ul className="hidden md:flex space-x-4 lg:space-x-12 text-[20px] text-[#2469FD] font-inter">
-                <li><a href="#Insurance" className="hover:text-black transition">Insurance</a></li>
-                <li><a href="#Services" className="hover:text-black transition">Services</a></li>
+                <li><a href="#insurance" className="hover:text-black transition">Insurance</a></li>
+                <li><a href="#services" className="hover:text-black transition">Services</a></li>
                 <li><a href="#Patients" className="hover:text-black transition">Patients</a></li>
                 <li><a href="#SmileGallery" className="hover:text-black transition">Smile Gallery</a></li>
             </ul>
@@ -70,9 +77,13 @@ const Navbar = () => {
                     Call Now
                 </a>
 
-                <a href="#book" className="px-4 lg:px-5 py-2 bg-[#2469FD] text-white rounded-[30px] text-lg hover:bg-black transition duration-300">
-                    Book Now
-                </a>
+                {/* ✅ Fixed "Book Now" Button: Uses Link Properly */}
+                <Link href="/appointment" passHref>
+                    <button className="px-4 lg:px-5 py-2 bg-[#2469FD] text-white rounded-[30px] text-lg 
+                           hover:bg-white hover:text-[#2469FD] transition duration-300">
+                        Book Now
+                    </button>
+                </Link>
             </div>
         </nav>
     );

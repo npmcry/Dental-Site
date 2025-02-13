@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Lisu_Bosa } from "next/font/google";
+import Navbar from "./components/Navbar"; // ✅ Make sure this is correct
 
 const lisuBosa = Lisu_Bosa({
   variable: "--font-lisu-bosa",
@@ -15,7 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${lisuBosa.variable} antialiased`}>{children}</body>
+      <body className={`${lisuBosa.variable} antialiased`}>
+        <Navbar />  {/* ✅ Add Navbar here to fix the error */}
+        {children}
+      </body>
     </html>
   );
 }
