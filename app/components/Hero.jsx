@@ -50,7 +50,7 @@ const Hero = () => {
                     <div className="relative z-[50] flex flex-col sm:flex-row items-center justify-center w-full max-w-[280px] sm:max-w-none mx-auto gap-3 sm:gap-6 pt-6">
                         <a
                             href="tel:9162591701"
-                            className="w-full sm:w-auto min-w-0 px-3 sm:px-4 lg:px-5 py-2.5 border border-[#2469FD] text-[#2469FD] rounded-[30px] text-sm sm:text-base lg:text-[20px] 
+                            className="w-full sm:w-auto min-w-0 px-3 sm:px-4 lg:px-5 py-3.5 border border-[#2469FD] text-[#2469FD] rounded-[30px] text-sm sm:text-base lg:text-[20px] 
                             hover:bg-white hover:text-[#2469FD] transition duration-300 flex items-center justify-center"
                         >
                             Call To Book 916-259-1701
@@ -58,7 +58,7 @@ const Hero = () => {
 
                         <Link 
                             href="/appointment"
-                            className="w-full sm:w-auto min-w-0 px-3 sm:px-4 lg:px-5 py-2.5 bg-[#2469FD] text-white rounded-[30px] text-sm sm:text-base lg:text-[20px] 
+                            className="w-full sm:w-auto min-w-0 px-3 sm:px-4 lg:px-5 py-3.5 bg-[#2469FD] text-white rounded-[30px] text-sm sm:text-base lg:text-[20px] 
                             hover:bg-[#feffff] transition duration-300 flex items-center justify-center hover:text-[#2469FD]"
                         >
                             Book Online
