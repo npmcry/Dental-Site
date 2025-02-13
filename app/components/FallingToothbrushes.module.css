@@ -1,0 +1,20 @@
+.toothbrush {
+    position: fixed;
+    color: #2469FD;
+    opacity: 0.2;
+    z-index: 0;
+    animation: fall linear infinite;
+    filter: drop-shadow(0 0 2px rgba(36, 105, 253, 0.3));
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20vh) rotate(0deg) scale(1);  /* Changed from -100vh to -20vh */
+    }
+    50% {
+        transform: translateY(40vh) rotate(180deg) scale(1.2);  /* Adjusted middle point */
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg) scale(1);
+    }
+}
