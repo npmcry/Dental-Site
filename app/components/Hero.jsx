@@ -61,14 +61,14 @@ const Hero = () => {
                         </a>
 
                         {/* Book Online Button */}
-                        <a
-                            href="/book-online"
+                        <Link 
+                            href="/appointment"
                             className="px-4 lg:px-5 py-2 bg-[#2469FD] text-white rounded-[30px] text-[20px] 
                hover:bg-[#feffff] transition duration-300 flex items-center justify-center hover:text-[#2469FD]"
                             style={{ minWidth: "160px", height: "60px" }}
                         >
                             Book Online
-                        </a>
+                        </Link>
                     </div>
 
                 </section>
