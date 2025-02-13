@@ -1,6 +1,13 @@
 import Image from "next/image";
 
 export default function Footer() {
+    const socialLinks = {
+        Instagram: "https://instagram.com/paradisefamilydental",
+        Facebook: "https://facebook.com/paradisefamilydental",
+        YouTube: "https://youtube.com/@paradisefamilydental",
+        TikTok: "https://tiktok.com/@paradisefamilydental"
+    };
+
     return (
         <footer className="bg-[#1C1C22] text-white py-10 px-6 md:px-12 lg:px-24">
             <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -33,27 +40,42 @@ export default function Footer() {
                 <div className="flex flex-col items-start font-inter">
                     <h3 className="font-semibold text-lg mb-3">CONTACT INFORMATION</h3>
                     <p className="text-base mb-1">Address</p>
-                    <p className="text-base text-gray-300 mb-4">
+                    <a 
+                        href="https://www.google.com/maps/search/?api=1&query=6930+Destiny+Drive+%23400+Rocklin+CA+95767"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base text-gray-300 mb-4 hover:text-white transition-colors duration-300"
+                    >
                         6930 Destiny Drive #400
                         <br />
                         Rocklin, CA 95767
-                    </p>
+                    </a>
                     <p className="text-base mb-1">Phone</p>
-                    <p className="text-base text-gray-300 mb-4">(916) 259-7701</p>
+                    <a 
+                        href="tel:+19162597701"
+                        className="text-base text-gray-300 mb-4 hover:text-white transition-colors duration-300"
+                    >
+                        (916) 259-7701
+                    </a>
                     <p className="text-base mb-1">Email</p>
-                    <p className="text-base text-gray-300">
+                    <a 
+                        href="mailto:paradisefamilydental@yahoo.com"
+                        className="text-base text-gray-300 hover:text-white transition-colors duration-300"
+                    >
                         paradisefamilydental@yahoo.com
-                    </p>
+                    </a>
                 </div>
 
                 {/* Right Column: Social Links */}
                 <div className="flex flex-col items-start font-inter">
                     <h3 className="font-semibold text-lg mb-3">SOCIAL</h3>
                     <ul className="space-y-2">
-                        {["Instagram", "Facebook", "YouTube", "TikTok"].map((platform) => (
+                        {Object.entries(socialLinks).map(([platform, url]) => (
                             <li key={platform}>
                                 <a
-                                    href="#"
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex items-center text-base text-gray-300 hover:text-white transition duration-300"
                                 >
                                     <span className="mr-2">{platform}</span>

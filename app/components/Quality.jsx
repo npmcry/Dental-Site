@@ -4,7 +4,7 @@ import GeneralDentistry from "../components/GeneralDentistry";
 const QualityCare = () => {
     return (
         <>
-            <section className="relative w-full px-6 md:px-12 lg:px-24 py-16">
+            <section className="relative w-full px-6 md:px-12 lg:px-24 py-16"> {/* Added py-16 for padding */}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 
@@ -52,12 +52,13 @@ const QualityCare = () => {
                 </div>
             </section>
 
-
             {/* General Dentistry Section (Must Be Outside the Section) */}
-            <GeneralDentistry />
+            <section className="relative w-full px-6 md:px-12 lg:px-24 py-16"> {/* Added py-16 for padding */}
+                <GeneralDentistry />
+            </section>
 
             {/* Technology + Insurance */}
-            <section className="relative w-full px-6 md:px-12 lg:px-24 py-16">
+            <section className="relative w-full px-6 md:px-12 lg:px-24 py-16"> {/* Added py-16 for padding */}
 
                 {/* Technology Header */}
                 <h2 className="text-[42px] md:text-[48px] font-bold leading-tight text-center break-words">
@@ -94,7 +95,6 @@ const QualityCare = () => {
                             priority
                         />
                     </div>
-
 
                 </div>
             </section>

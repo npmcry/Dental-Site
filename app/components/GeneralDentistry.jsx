@@ -6,18 +6,16 @@ const GeneralDentistry = () => {
         {
             name: "Cleanings",
             icon: "/assets/service-icons/cleanings.svg",
-            width: 200,
-            height: 200,
+            width: 150,
+            height: 150,
             link: "/services/cleanings",
-            marginRight: "",
         },
         {
             name: "Crowns",
             icon: "/assets/service-icons/crowns.svg",
-            width: 155,
-            height: 200,
+            width: 150,
+            height: 150,
             link: "/services/crowns",
-            marginRight: "mr-[-100px]",
         },
         {
             name: "Fillings",
@@ -25,7 +23,6 @@ const GeneralDentistry = () => {
             width: 150,
             height: 150,
             link: "/services/fillings",
-            marginRight: "mr-[-200px]",
         },
         {
             name: "Root Canals",
@@ -33,7 +30,6 @@ const GeneralDentistry = () => {
             width: 150,
             height: 150,
             link: "/services/root-canals",
-            marginRight: "mr-[-400px]",
         },
         {
             name: "Extractions",
@@ -41,14 +37,12 @@ const GeneralDentistry = () => {
             width: 150,
             height: 150,
             link: "/services/extractions",
-            marginRight: "mr-[-600px]",
         }
     ];
 
     return (
-        <section className="relative w-full max-w-screen-xl ml-[45px] px-6 md:px-12 lg:px-24 py-16">
+        <section className="relative w-full max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 py-16">
 
-            
             {/* SECTION TITLE */}
             <h3 className="text-[40px] md:text-[40px] font-bold text-left relative top-[-40px]">
 
@@ -59,12 +53,12 @@ const GeneralDentistry = () => {
             </h3>
 
             {/* SERVICES GRID */}
-            <div className="grid grid-cols-5 gap-20 mt-12 justify-start ml-[-0px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12">
                 {services.map((service, index) => (
                     <Link 
                         href={service.link} 
                         key={index}
-                        className={`flex flex-col items-center ${service.marginRight} group cursor-pointer`}
+                        className="flex flex-col items-center group cursor-pointer"
                     >
                         <div className="transform transition-transform duration-300 hover:scale-110">
                             <Image 
