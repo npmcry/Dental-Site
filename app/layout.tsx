@@ -1,11 +1,13 @@
 import "./globals.css";
 import { Lisu_Bosa } from "next/font/google";
-import Navbar from "./components/Navbar"; // ✅ Make sure this is correct
+import Navbar from "./components/Navbar";
+// TODO: Enable when setting up authentication
+// import { SessionProvider } from "next-auth/react";
 
 const lisuBosa = Lisu_Bosa({
   variable: "--font-lisu-bosa",
   subsets: ["latin"],
-  weight: ["400"], // Ensure correct weight
+  weight: ["400"],
 });
 
 export const metadata = {
@@ -17,7 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${lisuBosa.variable} antialiased`}>
-        <Navbar />  {/* ✅ Add Navbar here to fix the error */}
+        <Navbar />
+        {/* TODO: Enable SessionProvider when setting up authentication */}
         {children}
       </body>
     </html>
