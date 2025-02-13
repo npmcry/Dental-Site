@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ServicesGrid() {
   return (
@@ -26,7 +27,7 @@ export default function ServicesGrid() {
             {
               title: "Restorative Dentistry",
               description:
-                "Restore, Renew, Smile! Expert restorative dentistry to bring back your smile’s strength, function, and beauty.",
+                "Restore, Renew, Smile! Expert restorative dentistry to bring back your smile's strength, function, and beauty.",
               image: "restorative.png",
             },
             {
@@ -73,12 +74,12 @@ export default function ServicesGrid() {
                   >
                     LEARN MORE &rarr;
                   </a>
-                  <a
-                    href="#"
+                  <Link
+                    href="/appointment"
                     className="ml-auto px-5 py-2 border-2 border-[#5E4432] text-[#5E4432] rounded-full font-semibold text-sm hover:bg-[#5E4432] hover:text-white transition"
                   >
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -101,8 +102,8 @@ export default function ServicesGrid() {
           />
 
           {/* White Button Overlaid (moved slightly to the right) */}
-          <a
-            href="#"
+          <Link
+            href="/appointment"
             className="
     absolute top-[80%] left-1/2 
     transform -translate-x-1/2
@@ -113,7 +114,7 @@ export default function ServicesGrid() {
     transition-all duration-300 ease-in-out"
           >
             Learn More
-          </a>
+          </Link>
 
         </div>
       </section>

@@ -1,6 +1,50 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const GeneralDentistry = () => {
+    const services = [
+        {
+            name: "Cleanings",
+            icon: "/assets/service-icons/cleanings.svg",
+            width: 200,
+            height: 200,
+            link: "/services/cleanings",
+            marginRight: "",
+        },
+        {
+            name: "Crowns",
+            icon: "/assets/service-icons/crowns.svg",
+            width: 155,
+            height: 200,
+            link: "/services/crowns",
+            marginRight: "mr-[-100px]",
+        },
+        {
+            name: "Fillings",
+            icon: "/assets/service-icons/fillings.svg",
+            width: 150,
+            height: 150,
+            link: "/services/fillings",
+            marginRight: "mr-[-200px]",
+        },
+        {
+            name: "Root Canals",
+            icon: "/assets/service-icons/root-canals.svg",
+            width: 150,
+            height: 150,
+            link: "/services/root-canals",
+            marginRight: "mr-[-400px]",
+        },
+        {
+            name: "Extractions",
+            icon: "/assets/service-icons/extractions.svg",
+            width: 150,
+            height: 150,
+            link: "/services/extractions",
+            marginRight: "mr-[-600px]",
+        }
+    ];
+
     return (
         <section className="relative w-full max-w-screen-xl ml-[45px] px-6 md:px-12 lg:px-24 py-16">
 
@@ -16,62 +60,26 @@ const GeneralDentistry = () => {
 
             {/* SERVICES GRID */}
             <div className="grid grid-cols-5 gap-20 mt-12 justify-start ml-[-0px]">
-
-                {/* CLEANINGS */}
-                <div className="flex flex-col items-center">
-                    <Image 
-                        src="/assets/service-icons/cleanings.svg" 
-                        alt="Cleanings" 
-                        width={200} 
-                        height={200} 
-                    />
-                    <p className="text-[#2469FD] text-[24px] font-semibold mt-4">Cleanings</p>
-                </div>
-
-                {/* CROWNS */}
-                <div className="flex flex-col items-center mr-[-100px]">
-                    <Image 
-                        src="/assets/service-icons/crowns.svg" 
-                        alt="Crowns" 
-                        width={155} 
-                        height={200} 
-                    />
-                    <p className="text-[#2469FD] text-[24px] font-semibold mt-4">Crowns</p>
-                </div>
-
-                {/* FILLINGS */}
-                <div className="flex flex-col items-center mr-[-200px]">
-                    <Image 
-                        src="/assets/service-icons/fillings.svg" 
-                        alt="Fillings" 
-                        width={150} 
-                        height={150} 
-                    />
-                    <p className="text-[#2469FD] text-[24px] font-semibold mt-4">Fillings</p>
-                </div>
-
-                {/* ROOT CANALS */}
-                <div className="flex flex-col items-center mr-[-400px]">
-                    <Image 
-                        src="/assets/service-icons/root-canals.svg" 
-                        alt="Root Canals" 
-                        width={150} 
-                        height={150} 
-                    />
-                    <p className="text-[#2469FD] text-[24px] font-semibold mt-4">Root Canals</p>
-                </div>
-
-                {/* EXTRACTIONS */}
-                <div className="flex flex-col items-center mr-[-600px]">
-                    <Image 
-                        src="/assets/service-icons/extractions.svg" 
-                        alt="Extractions" 
-                        width={150} 
-                        height={150} 
-                    />
-                    <p className="text-[#2469FD] text-[24px] font-semibold mt-4">Extractions</p>
-                </div>
-
+                {services.map((service, index) => (
+                    <Link 
+                        href={service.link} 
+                        key={index}
+                        className={`flex flex-col items-center ${service.marginRight} group cursor-pointer`}
+                    >
+                        <div className="transform transition-transform duration-300 hover:scale-110">
+                            <Image 
+                                src={service.icon} 
+                                alt={service.name} 
+                                width={service.width} 
+                                height={service.height}
+                                className="transition-all duration-300 group-hover:drop-shadow-lg" 
+                            />
+                        </div>
+                        <p className="text-[#2469FD] text-[24px] font-semibold mt-4 transition-colors duration-300 group-hover:text-[#4F46E5]">
+                            {service.name}
+                        </p>
+                    </Link>
+                ))}
             </div>
 
         </section>
