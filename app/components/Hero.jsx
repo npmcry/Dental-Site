@@ -4,7 +4,7 @@ import Image from "next/image";
 const Hero = () => {
     return (
         <>
-        
+
             {/* ✅ Background wrapper - does NOT mess up layout */}
             <div className="navbar-hero-bg">
                 <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
@@ -46,11 +46,13 @@ const Hero = () => {
                     </div>
 
                     {/* Hero Buttons - Properly Spaced */}
-                    <div className="relative z-10 flex items-center justify-center space-x-6 pt-6">
-                        {/* Call To Book Button */}
+                    <div className="relative z-[50] flex items-center justify-center space-x-6 pt-6">
+
+
                         <a
                             href="tel:9162591701"
-                            className="px-4 lg:px-5 py-2 border border-[#2469FD] text-[#2469FD] rounded-[30px] text-[20px] hover:text-black transition duration-300 flex items-center justify-center"
+                            className="px-4 lg:px-5 py-2 border border-[#2469FD] text-[#2469FD] rounded-[30px] text-[20px] 
+               hover:bg-white hover:text-[#2469FD] transition duration-300 flex items-center justify-center"
                             style={{ minWidth: "330px", height: "60px" }}
                         >
                             Call To Book 916-259-1701
@@ -59,12 +61,14 @@ const Hero = () => {
                         {/* Book Online Button */}
                         <a
                             href="/book-online"
-                            className="px-4 lg:px-5 py-2 bg-[#2469FD] text-white rounded-[30px] text-[20px] hover:bg-[#3A5899] transition duration-300 flex items-center justify-center"
+                            className="px-4 lg:px-5 py-2 bg-[#2469FD] text-white rounded-[30px] text-[20px] 
+               hover:bg-[#3A5899] transition duration-300 flex items-center justify-center"
                             style={{ minWidth: "160px", height: "60px" }}
                         >
                             Book Online
                         </a>
                     </div>
+
                 </section>
             </div>
 

@@ -7,11 +7,15 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    'hover:bg-[#3A5899]',
-    'hover:text-black',
+    'border-[#2469FD]', 
+    'text-[#2469FD]', 
+    'bg-[#2469FD]', 
+    'hover:bg-[#3A5899]', 
+    'hover:text-[#2469FD]',
     'hover:bg-white',
-    'hover:text-[#6092FF]',
   ],
+  
+
   theme: {
     extend: {},
   },

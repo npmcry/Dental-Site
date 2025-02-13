@@ -20,20 +20,20 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="w-full fixed top-0 left-0 bg-white px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+        <nav className="w-full fixed top-0 left-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
             {/* Logo */}
             <a href="#top" className="flex items-center space-x-3">
-                <Image 
-                    src="/logo.png" 
-                    alt="Logo" 
-                    width={50} 
-                    height={50} 
-                    unoptimized={true} 
+                <Image
+                    src="/logo.png"
+                    alt="Logo"
+                    width={50}
+                    height={50}
+                    unoptimized={true}
                     className="w-[50px] h-[50px] object-contain"
                 />
                 <div className="flex flex-col justify-center">
                     <span className="text-[#2469FD] text-[30px] md:text-[40px] lg:text-[50px] font-lisu font-bold leading-none">Paradise</span>
-                    <span className="text-[#2469FD] text-[14px] md:text-[16px] lg:text-[20px] font-inter leading-none">family dental</span>
+                    <span className="text-[#2469FD] text-[14px] md:text-[16px] lg:text-[20px] font-inter leading-none self-center">family dental</span>
                 </div>
             </a>
 
@@ -62,9 +62,14 @@ const Navbar = () => {
 
             {/* Buttons - Fixed for Tablets */}
             <div className="hidden md:flex space-x-2 lg:space-x-4">
-                <a href="tel:+1234567890" className="px-4 lg:px-5 py-2 border border-[#2469FD] text-[#2469FD] rounded-[30px] text-lg hover:text-black transition duration-300">
+                <a
+                    href="tel:+1234567890"
+                    className="px-4 lg:px-5 py-2 border border-[#2469FD] text-[#2469FD] rounded-[30px] text-lg 
+             hover:bg-white hover:text-[#2469FD] transition duration-300"
+                >
                     Call Now
                 </a>
+
                 <a href="#book" className="px-4 lg:px-5 py-2 bg-[#2469FD] text-white rounded-[30px] text-lg hover:bg-black transition duration-300">
                     Book Now
                 </a>

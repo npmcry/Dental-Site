@@ -5,7 +5,9 @@
 /* Reset link styles */
 a {
   text-decoration: none;
+  pointer-events: auto;
 }
+
 
 /* Ensure Lisu Bosa Applies */
 .font-lisu {
@@ -31,8 +33,8 @@ a {
 }
 
 @font-face {
-  font-family: "Lisua Bosa";
-  src: url('/fonts/LisuaBosa.ttf') format('truetype'); /* Ensure correct path */
+  font-family: "Lisu Bosa";
+  src: url('/fonts/LisuBosa.ttf') format('truetype'); /* Ensure correct path */
   font-weight: normal;
   font-style: normal;
 }
@@ -41,8 +43,9 @@ a {
 .navbar-hero-bg {
   background-image: url('/background.jpg'); /* Ensure this path is correct */
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
+  
   
   /* Ensures it covers only the Hero and Navbar */
   width: 100vw;
@@ -59,4 +62,22 @@ a {
 /* Ensure other sections are not affected */
 body {
   background: none; /* Remove global background if it's affecting other sections */
+}
+
+/* Ensure Tailwind hover effects work */
+.hover\:bg-\[\#3A5899\]:hover {
+  background-color: #3A5899 ;
+}
+.hover\:text-black:hover {
+  color: black ;
+}
+.hover\:bg-white:hover {
+  background-color: white;
+}
+.hover\:text-\[\#6092FF\]:hover {
+  color: #6092FF;
+}
+
+.navbar-hero-bg {
+  pointer-events: none; /* Ensures it doesn't block buttons */
 }
