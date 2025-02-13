@@ -5,6 +5,3 @@
 [build.environment]
   NEXT_USE_SSR = "false"
   NODE_VERSION = "18"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"

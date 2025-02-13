@@ -60,60 +60,41 @@ export default function AppointmentPage() {
   };
 
   const handleSendVerification = async () => {
-    // Here you would integrate with your SMS service
+    console.log("Verification code would be sent to:", formData.phone);
     setIsVerifying(true);
   };
 
   const handleVerifyCode = async () => {
-    // Here you would verify the code
+    console.log("Code verification successful");
     setIsVerified(true);
     handleNext();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Submitting form...");
+    console.log("Form submitted:", formData);
     
-    try {
-      // For testing, comment out the actual API call
-      // const response = await fetch("http://localhost:5000/api/appointments", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formData),
-      // });
-      
-      // Simulate successful response
-      const response = { ok: true };
-      
-      if (response.ok) {
-        console.log("Setting success state...");
-        setShowSuccess(true);
-        
-        // Reset form after delay
-        setTimeout(() => {
-          setShowSuccess(false);
-          setStep(1);
-          setFormData({
-            patientType: "",
-            appointmentType: "",
-            date: null,
-            timeSlot: "",
-            firstName: "",
-            lastName: "",
-            dob: "",
-            insurance: "",
-            email: "",
-            phone: "",
-            verificationCode: "",
-          });
-        }, 3000);
-      } else {
-        alert("Error booking appointment.");
-      }
-    } catch (error) {
-      console.error("Submit error:", error);
-      alert("Error booking appointment.");
-    }
+    // Simulate success without API call
+    setShowSuccess(true);
+    
+    // Reset form after delay
+    setTimeout(() => {
+      setShowSuccess(false);
+      setStep(1);
+      setFormData({
+        patientType: "",
+        appointmentType: "",
+        date: null,
+        timeSlot: "",
+        firstName: "",
+        lastName: "",
+        dob: "",
+        insurance: "",
+        email: "",
+        phone: "",
+        verificationCode: "",
+      });
+    }, 3000);
   };
 
   return (
