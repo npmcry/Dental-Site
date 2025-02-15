@@ -28,7 +28,7 @@ const FirstVisit = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#5E4432] to-[#8B6B5D] bg-clip-text text-transparent mb-4">
-            👋 Welcome to Paradise Dental 👋
+             Welcome to Paradise Dental 
           </h1>
           <p className="text-[#5E4432] text-lg max-w-2xl mx-auto">
             Your journey to a beautiful smile starts here

@@ -104,7 +104,7 @@ const PatientPage = () => {
                             </div>
                             <button
                                 onClick={() => console.log('Email sign-in')}
-                                className="w-full bg-gradient-to-r from-[#2469FD] to-[#4F46E5] text-white rounded-[20px] py-4 font-medium hover:opacity-90 transition-all duration-200"
+                                className="w-full bg-gradient-to-r from-[#2469FD] to-[#4F46E5] text-white rounded-[30px] py-4 font-medium hover:opacity-90 transition-all duration-200"
                             >
                                 Sign In
                             </button>
