@@ -43,6 +43,37 @@ const Navbar = () => {
         }
     }, []);
 
+    // Add useEffect to handle body scroll lock
+    useEffect(() => {
+        if (menuOpen) {
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Re-enable scrolling when menu is closed
+            document.body.style.overflow = 'unset';
+        }
+
+        // Cleanup function
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [menuOpen]);
+
+    // Add scroll event handler
+    useEffect(() => {
+        const handleScroll = () => {
+            if (menuOpen) {
+                setMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [menuOpen]);
+
     return (
         <nav className="w-full fixed top-0 left-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
             {/* Logo */}
@@ -159,7 +190,8 @@ const Navbar = () => {
                             href="tel:9162591701"
                             className="w-full white-gradient text-[#2469FD] text-xl font-medium 
                                 rounded-[30px] py-4 px-6 flex items-center justify-center 
-                                transition-all duration-300 hover:opacity-90 active:scale-[0.98]"
+                                transition-all duration-300 hover:opacity-90 active:scale-[0.98]
+                                border-2 border-[#2469FD]"
                             onClick={() => setMenuOpen(false)}
                         >
                             Call To Book
